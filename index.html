@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Random Name Picker</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div class="vertColumn">
+		<h1 style="margin-bottom: 0;">Name List</h1>
+		<h4 style="margin-top: 0;">Paste using ctrl+shift+v</h4>
+		<div id="nameBox" contenteditable="true" placeholder="Enter names here..."></div>
+	</div>
+	<div class="vertColumn" id="settingsColumn">
+		<h1>Settings</h1>
+		<div>
+			<span>Spin Font Size: <span class="yellowText" style="font-weight: bold;">48</span>px</span>
+			<input type="range" min="36" max="84" value="48" class="slider" id="sliderSpinFontSize">
+		</div>
+		<div>
+			<span>End Font Size: <span class="yellowText" style="font-weight: bold;">84</span>px</span>
+			<input type="range" min="64" max="128" value="84" class="slider" id="sliderEndFontSize">
+		</div>
+		<div>
+			<span>Spin Time: <span class="yellowText" style="font-weight: bold;">3</span>s</span>
+			<input type="range" min="0" max="10" value="3" class="slider" id="sliderSpinTime">
+		</div>
+		<div>
+			<span>Iterations: <span class="yellowText" style="font-weight: bold;">20</span></span>
+			<input type="range" min="0" max="100" value="20" class="slider" id="sliderNumIters">
+		</div>
+		<div>
+			<span>Rate Function: <span class="yellowText" style="font-weight: bold;">Linear</span></span>
+			<input type="range" min="0" max="0" value="0" class="slider" id="sliderRateFunc">
+		</div>
+		<div>
+			<span>Name Color: <input type="color" id="colorName" value="#deb260"></span>
+		</div>
+		<div>
+			<span>Outline Box? <input type="checkbox" id="checkOutline"></span>
+		</div>
+		<div class="greenButton" style="margin-top: 20px;" onclick="spin();">Spin!</div>
+	</div>
+	<div class="vertColumn" id="spinningColumn" style="display: none; min-width: 800px; width: fit-content;">
+		<h1 style="margin-bottom: 0;">Spinning:</h1>
+		<h1 class="yellowText" id="nameUp" style="padding: 5px 20px;"></h1>
+		<div id=keepRemoveButtons style="display: flex; flex-direction: column; align-items: center; row-gap: 10px;">
+			<div style="display: flex; column-gap: 15px; margin-top: 40px;">
+				<div class="redButton" id="removeButton">Remove</div>
+				<div class="greenButton" id="keepButton">Keep</div>
+			</div>
+			<span>Back to Settings? <input type="checkbox" id="checkBackToSettings" checked="true"></span>
+		</div>
+	</div>
+  <script src="script.js"></script>
+</body>
+
+</html>
